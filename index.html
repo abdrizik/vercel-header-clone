@@ -1,13 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <meta name="description" content="" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Stimulus App</title>
   </head>
-  <body>
-    <div id="app"></div>
+
+  <body class="font-sans antialiased">
+    <main class="h-[200vh]">
+      <header
+        data-controller="header"
+        class="bg-white px-6 pt-4 left-0 right-0"
+      >
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <a
+              href="/"
+              data-header-target="logo"
+              class="size-5 ml-2.5 fixed z-10"
+            >
+              <img src="/src/assets/logo.svg" alt="Logo" />
+            </a>
+
+            <div class="flex items-center text-sm gap-4 ml-10">
+              <img src="/src/assets/slash.svg" alt="Separator" class="h-4 w-4" />
+
+              <div class="flex items-center gap-5">
+                <img
+                  alt="User avatar"
+                  width="22"
+                  height="22"
+                  class="rounded-full"
+                  src="https://vercel.com/api/www/avatar?s=44&teamId=team_LUzwojYbpqh8t8GxJuBSY6UN"
+                />
+                <p class="font-medium">Abdelrahman's projects</p>
+                <span
+                  class="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium"
+                >
+                  Hobby
+                </span>
+              </div>
+
+              <button class="p-1 hover:bg-gray-50 rounded transition-colors">
+                <img
+                  src="/src/assets/chevron-up-down.svg"
+                  alt="Toggle"
+                  class="text-gray-600 h-4 w-4"
+                />
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button
+              class="relative flex items-center gap-2 px-2.5 py-1.5 h-[30px] w-[30px] lg:w-40 xl:w-48 border border-gray-300 rounded-full lg:rounded-md hover:bg-gray-50 transition-colors"
+            >
+              <img
+                src="/src/assets/search.svg"
+                alt="Search"
+                class="text-gray-600 lg:text-gray-600 flex-shrink-0 h-4 w-4"
+              />
+              <span
+                class="hidden lg:block text-gray-400 flex-1 text-left text-sm"
+              >
+                Find…
+              </span>
+              <kbd
+                class="hidden lg:block bg-white px-1.5 py-0.5 rounded text-xs text-gray-600 shadow-sm border border-gray-200"
+              >
+                F
+              </kbd>
+            </button>
+
+            <button
+              class="px-3 h-[30px] text-sm border border-gray-300 hover:bg-gray-100 rounded-md transition-colors"
+            >
+              Feedback
+            </button>
+
+            <button
+              class="flex items-center justify-center size-8 hover:bg-gray-100 rounded-full transition-colors border border-gray-300"
+            >
+              <img
+                src="/src/assets/bell.svg"
+                alt="Notifications"
+                class="text-gray-600 h-4 w-4"
+              />
+            </button>
+            <button
+              class="flex items-center justify-center size-8 hover:bg-gray-100 rounded-full transition-colors border border-gray-300 top-0 z-50 sticky"
+            >
+              <img
+                src="/src/assets/book.svg"
+                alt="Documentation"
+                class="text-gray-600 h-4 w-4"
+              />
+            </button>
+
+            <button class="flex items-center rounded-lg p-1">
+              <img
+                alt="User avatar"
+                width="32"
+                height="32"
+                class="rounded-full"
+                src="https://vercel.com/api/www/avatar?s=64&u=abdrizik-3056"
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <nav
+        data-controller="navigation"
+        class="sticky top-0 w-full bg-white text-sm border-b border-gray-100"
+        style="box-shadow: 0 1px 1px 0 rgb(0 0 0 / 0.02)"
+      >
+        <div
+          data-navigation-target="container"
+          class="flex h-[46px] items-center px-2"
+        >
+          <div
+            data-navigation-target="nav"
+            data-action="mouseleave->navigation#leave"
+            class="flex relative ml-4"
+          >
+            <div
+              data-navigation-target="hoverBg"
+              class="absolute inset-y-3 bg-gray-100 rounded transition-all duration-200"
+            ></div>
+
+            <div
+              data-navigation-target="activeBar"
+              class="absolute bottom-0.5 left-0 h-[2px] bg-black transition-all duration-300"
+            ></div>
+          </div>
+        </div>
+      </nav>
+    </main>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
