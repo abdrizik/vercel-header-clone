@@ -2,6 +2,10 @@
 
 A recreation of Vercel's dashboard header with smooth scroll animations built using Stimulus.js.
 
+## Anatomy
+
+![Vercel header anatomy](./docs/vercel-header-anatomy.png)
+
 ## Technologies
 
 - Stimulus.js - JavaScript framework
